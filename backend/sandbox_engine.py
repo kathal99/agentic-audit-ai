@@ -1,7 +1,7 @@
 import docker
 import time
 from docker.errors import DockerException, APIError, ContainerError
-from config import CANARY_FILES, CANARY_CONTENT, DOCKER_IMAGE, SANDBOX_TIMEOUT, SANDBOX_MEMORY, SANDBOX_CPUS, MAX_LOG_LINES
+from .config import CANARY_FILES, CANARY_CONTENT, DOCKER_IMAGE, SANDBOX_TIMEOUT, SANDBOX_MEMORY, SANDBOX_CPUS, MAX_LOG_LINES
 
 class SandboxEngine:
     def __init__(self):
