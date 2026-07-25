@@ -5,9 +5,20 @@ from .config import CANARY_FILES, CANARY_CONTENT, DOCKER_IMAGE, SANDBOX_TIMEOUT,
 
 class SandboxEngine:
     def __init__(self):
-        self.client = docker.from_env()
+        self.client = None
+
+    def _ensure_client(self):
+        if self.client is None:
+            try:
+                self.client = docker.from_env()
+            except DockerException as exc:
+                raise RuntimeError(
+                    "Docker is not available. Sandbox execution is disabled. "
+                    "Install Docker or set up a compatible Docker endpoint."
+                ) from exc
 
     def create_container(self):
+        self._ensure_client()
         try:
             container = self.client.containers.run(
                 DOCKER_IMAGE,
