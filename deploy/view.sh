@@ -25,11 +25,12 @@ FRONTEND_PID_FILE=".tmp/view-frontend.pid"
 start_process() {
   local name="$1"
   local pid_file="$2"
-  shift 2
+  local command="$3"
+  local log_file="$4"
   if [ -f "$pid_file" ] && kill -0 "$(cat "$pid_file")" >/dev/null 2>&1; then
     echo "$name already running (PID $(cat "$pid_file"))"
   else
-    nohup bash -lc "$*" >"$3" 2>&1 &
+    nohup bash -lc "$command" >"$log_file" 2>&1 &
     echo $! >"$pid_file"
     echo "Started $name with PID $(cat "$pid_file")"
   fi

@@ -98,12 +98,6 @@ git commit -m "feat: init Agentic Audit AI"
 git remote add origin git@github.com:kathal99/agentic-audit-ai.git
 git push -u origin main
 ```
-You can also set your local Git identity for this project:
-
-```bash
-git config user.name "kathal99"
-git config user.email "usr4206996@gmail.com"
-```
 
 Make sure your SSH key is configured for GitHub. If you need HTTPS instead, replace the remote URL with `https://github.com/kathal99/agentic-audit-ai.git`.
 

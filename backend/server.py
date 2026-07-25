@@ -3,12 +3,12 @@ import json
 import requests
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, Response
 from fastapi.middleware.cors import CORSMiddleware
-from rag_engine import ComplianceRAG
-from pii_firewall import PIIFirewall
-from report_generator import AuditReportCompiler
-from sandbox_engine import SandboxEngine
-from alerts import AlertDispatcher
-from config import CANARY_FILES, matches_breach
+from .rag_engine import ComplianceRAG
+from .pii_firewall import PIIFirewall
+from .report_generator import AuditReportCompiler
+from .sandbox_engine import SandboxEngine
+from .alerts import AlertDispatcher
+from .config import CANARY_FILES, matches_breach
 
 app = FastAPI(title="Agentic Audit AI Server", version="2.0.0")
 app.add_middleware(
