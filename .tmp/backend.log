@@ -216,3 +216,20 @@ Traceback (most recent call last):
         f'Error while fetching server API version: {e}'
     )
 docker.errors.DockerException: Error while fetching server API version: Not supported URL scheme http+docker
+WARNING:  WatchFiles detected changes in 'backend/sandbox_engine.py'. Reloading...
+/home/kali/agentic-audit-ai/venv/lib/python3.13/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.4.3)/charset_normalizer (3.4.9) doesn't match a supported version!
+  warnings.warn(
+INFO:     Started server process [38444]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+WARNING:  WatchFiles detected changes in 'backend/sandbox_engine.py'. Reloading...
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [38444]
+/home/kali/agentic-audit-ai/venv/lib/python3.13/site-packages/requests/__init__.py:113: RequestsDependencyWarning: urllib3 (2.7.0) or chardet (7.4.3)/charset_normalizer (3.4.9) doesn't match a supported version!
+  warnings.warn(
+INFO:     Started server process [38530]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:39156 - "HEAD / HTTP/1.1" 404 Not Found
