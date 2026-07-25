@@ -1,5 +1,5 @@
 import requests
-from config import DISCORD_WEBHOOK_URL, SLACK_WEBHOOK_URL
+from .config import DISCORD_WEBHOOK_URL, SLACK_WEBHOOK_URL
 
 class AlertDispatcher:
     @staticmethod
