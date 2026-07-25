@@ -1,0 +1,37 @@
+version: '3.9'
+
+services:
+  backend:
+    build: ./backend
+    command: sh -c "source /opt/venv/bin/activate && uvicorn server:app --host 0.0.0.0 --port 8000"
+    volumes:
+      - ./backend:/app/backend
+      - ./backend/chroma_compliance_db:/app/backend/chroma_compliance_db
+    ports:
+      - "8000:8000"
+    depends_on:
+      - ollama
+    environment:
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL:-}
+      - SLACK_WEBHOOK_URL=${SLACK_WEBHOOK_URL:-}
+      - SANDBOX_IMAGE=alpine:3.18
+      - SANDBOX_TIMEOUT=18
+      - SANDBOX_MEMORY=256m
+      - SANDBOX_CPUS=0.5
+
+  frontend:
+    build: ./frontend
+    command: npm run preview -- --host 0.0.0.0 --port 4173
+    volumes:
+      - ./frontend:/app/frontend
+    ports:
+      - "4173:4173"
+    depends_on:
+      - backend
+
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    volumes:
+      - ~/.ollama:/root/.ollama

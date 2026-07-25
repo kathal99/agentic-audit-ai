@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Orbitron:wght@500;700&display=swap');
+
+:root {
+  --bg: #050608;
+  --card-bg: #0c0e14;
+  --accent-cyan: #00f0ff;
+  --accent-pink: #ff0055;
+  --accent-amber: #ffaa00;
+  --accent-green: #22c55e;
+  --text-main: #d1d5db;
+  --border: #1f293d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, rgba(0, 255, 255, 0.08), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(255, 0, 85, 0.09), transparent 18%),
+    var(--bg);
+  color: var(--text-main);
+  font-family: 'Fira Code', monospace;
+}
+
+button {
+  font-family: 'Fira Code', monospace;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 30px 0 18px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-title {
+  color: var(--accent-cyan);
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: 0.08em;
+}
+
+.hero-subtitle {
+  color: #8b94a6;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+.hero-status {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.status-pill {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  padding: 10px 16px;
+  color: #cbd5e1;
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.action-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.cyber-button,
+.ghost-button {
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 14px 24px;
+  font-weight: 700;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cyber-button {
+  background: linear-gradient(135deg, #ff0055 0%, #ff7a00 100%);
+  border: none;
+  color: #fff;
+  box-shadow: 0 15px 45px rgba(255, 0, 85, 0.25);
+}
+
+.cyber-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 55px rgba(255, 0, 85, 0.3);
+}
+
+.ghost-button {
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+}
+
+.ghost-button:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+
+.status-card {
+  background: rgba(10, 13, 24, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 20px;
+  min-height: 220px;
+}
+
+.status-card h3 {
+  color: #ffaa00;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
+
+.overview-row {
+  display: flex;
+  justify-content: space-between;
+  color: #cbd5e1;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.overview-meter {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.overview-meter__fill {
+  background: linear-gradient(90deg, #fb7185, #facc15);
+  height: 100%;
+  transition: width 0.2s ease;
+}
+
+.domain-pill {
+  background: #111420;
+  border: 1px solid #1f2937;
+  color: #cbd5e1;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+.substatus-pill {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.score-ring {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.score-ring__label {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  color: #e2e8f0;
+  font-size: 0.95rem;
+}
+
+.score-ring__label span {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 800;
+}
+
+.score-ring__label small {
+  display: block;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060708;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1f2937;
+  border-radius: 999px;
+}
